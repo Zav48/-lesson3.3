@@ -39,11 +39,15 @@ color = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
 
 runing = True # boolean variable - логическая переменная - когда нужно будет заверщить игру переменную сделаю = folse
 while runing:
-    pass # пока что ни чего не делает(пропуск) нужна, чтобы не выходила ошибка
+    SKREEN.fill(color) # fill - метод для заполнения цветом. SKREEN, color это экран и цвет.
+
+    # начинается работа с событиями. цикл будет перебирать все события в игре и сохранять в переменную
+    # event.  in и дальше прописываю функцию, которая будет брать все наши события и делать из нх коллекци. event - компонент по работе
+    # с событиям в pygame. get() - (получить) все события.
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: # если событие = QUIT
+            runing = False # то переменная runing = false
 
 pygame.quit() # closes all pygame modules - закрывает все модули pygame. завершает игру, как только закроется цикл (folse)
 
 #создать ширину и высоту окна. это делается в строчке после pygame.init()
-
-
-
